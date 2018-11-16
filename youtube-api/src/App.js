@@ -10,10 +10,10 @@ class App extends Component {
     this.state = {
       apiKey :'AIzaSyAtqU_m_lRYnxm8-fp-YUabzq9HLDhPgg0',
       videos : [],
-      selectedVideo : null
-
+      selectedVideo : null,
+     
     }
-    this.videoSearch('KDA');
+    this.videoSearch("KDA");
   }
 
   videoSearch(term){
@@ -36,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar onSearchInputChange={term=>this.videoSearch(term)}/>
         <VideoDetail video={this.state.selectedVideo}/>
         <VideoList 
         onVideoSelect={selectedVideo=>this.setState({selectedVideo})}
