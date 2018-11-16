@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import YTSearch from 'youtube-api-search';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
+import SearchBar from './components/search-bar';
+import css from './index.css';
 class App extends Component {
   constructor(props){
     super(props);
@@ -34,6 +36,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <SearchBar />
         <VideoDetail video={this.state.selectedVideo}/>
         <VideoList 
         onVideoSelect={selectedVideo=>this.setState({selectedVideo})}
